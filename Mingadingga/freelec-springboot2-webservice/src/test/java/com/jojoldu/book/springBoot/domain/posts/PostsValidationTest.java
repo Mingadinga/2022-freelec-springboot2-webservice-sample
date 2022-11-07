@@ -1,5 +1,6 @@
 package com.jojoldu.book.springBoot.domain.posts;
 
+import com.jojoldu.book.springboot.Application;
 import com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterAll;
@@ -15,7 +16,7 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-@SpringBootTest
+@SpringBootTest(classes = Application.class)
 public class PostsValidationTest {
 
     private static ValidatorFactory validatorFactory;
