@@ -1,6 +1,7 @@
 package com.jojoldu.book.springBoot;
 
 
+import com.jojoldu.book.springboot.Application;
 import com.jojoldu.book.springboot.config.auth.SecurityConfig;
 import com.jojoldu.book.springboot.web.HelloController;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -24,6 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
                 @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
         }
 )
+@ContextConfiguration(classes={Application.class})
 public class HelloControllerTest {
     @Autowired private MockMvc mvc;
 
