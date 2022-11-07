@@ -1,5 +1,6 @@
 package com.jojoldu.book.springBoot.domain.posts;
 
+import com.jojoldu.book.springboot.Application;
 import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.domain.posts.PostsRepository;
 import org.junit.jupiter.api.AfterEach;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
+@SpringBootTest(classes = Application.class)
 public class PostsRepositoryTest {
 
     @Autowired

@@ -1,5 +1,6 @@
 package com.jojoldu.book.springBoot.web;
 
+import com.jojoldu.book.springboot.Application;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = RANDOM_PORT)
+@SpringBootTest(webEnvironment = RANDOM_PORT, classes = Application.class)
 public class IndexControllerTest {
 
     @Autowired
